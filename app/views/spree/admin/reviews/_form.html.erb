@@ -21,3 +21,11 @@
     <%= f.select :locale, I18n.available_locales.map { |lc| [t(lc, default: lc.to_s), lc.to_s] }, {}, class: 'select2' %>
   </div>
 <% end %>
+
+<% if f.object.image.attached? %>
+  <p>
+    <%= label_tag t(:preview) %>
+    <br>
+    <%= image_tag main_app.url_for(f.object.image), class: 'img-fluid', style: 'width: 240px; height: 120px;' %>
+  </p>
+<% end %>
