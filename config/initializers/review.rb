@@ -17,7 +17,7 @@ Rails.application.config.after_initialize do
         'review_settings',
         ::Spree::Core::Engine.routes.url_helpers.edit_admin_review_settings_path
       )
-      .with_manage_ability_check(::Spree::Slide)
+      .with_manage_ability_check(::Spree::ReviewSetting)
       .with_match_path('/review_settings')
       .build
     )
