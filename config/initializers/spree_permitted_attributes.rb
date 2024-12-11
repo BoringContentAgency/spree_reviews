@@ -4,7 +4,7 @@ module Spree
     mattr_reader *ATTRIBUTES
 
     @@product_attributes += %i[avg_rating reviews_count]
-    @@review_attributes = [:rating, :title, :review, :name, :show_identifier, :image, :location]
+    @@review_attributes = [:rating, :title, :review, :name, :show_identifier, { images: [] }, :location]
     @@feedback_review_attributes = [:rating, :comment]
   end
 end

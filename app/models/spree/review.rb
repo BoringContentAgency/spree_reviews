@@ -8,7 +8,7 @@ class Spree::Review < ActiveRecord::Base
   after_save :recalculate_product_rating, if: :approved?
   after_destroy :recalculate_product_rating
 
-  has_one_attached :image
+  has_many_attached :images
 
   validates :name, :review, presence: true
   validates :rating, numericality: {

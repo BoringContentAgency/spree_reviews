@@ -22,10 +22,12 @@
   </div>
 <% end %>
 
-<% if f.object.image.attached? %>
+<% if f.object.images.attached? %>
   <p>
     <%= label_tag t(:preview) %>
     <br>
-    <%= image_tag main_app.url_for(f.object.image), class: 'img-fluid', style: 'width: 240px; height: 120px;' %>
+    <% f.object.images.first(4).each do |image| %>
+      <%= image_tag main_app.url_for(image), class: 'img-fluid', style: 'width: 240px; height: 120px;' %>
+    <% end %>
   </p>
 <% end %>
